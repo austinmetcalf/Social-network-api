@@ -1,3 +1,4 @@
+// need to require mongoose
 const express = require('express');
 const mongoose = require('mongoose');
 
@@ -16,7 +17,7 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/social-network'
   useUnifiedTopology: true
 });
 
-// Use this to log mongo queries being executed!
+// log mongo queries 
 mongoose.set('debug', true);
 
 app.listen(PORT, () => console.log(`🌍 Connected on localhost:${PORT}`));
