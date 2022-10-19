@@ -1,4 +1,5 @@
 // need to require mongoose and express
+// make sure both are installed to start server
 const express = require('express');
 const mongoose = require('mongoose');
 
@@ -20,4 +21,4 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/social-network'
 // log mongo queries below
 mongoose.set('debug', true);
 
-app.listen(PORT, () => console.log(`🌍 Connected on localhost:${PORT}`));
+app.listen(PORT, () => console.log(` Connected on localhost:${PORT}`));
