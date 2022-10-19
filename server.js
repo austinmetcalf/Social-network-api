@@ -1,4 +1,4 @@
-// need to require mongoose
+// need to require mongoose and express
 const express = require('express');
 const mongoose = require('mongoose');
 
@@ -12,12 +12,12 @@ app.use(express.static('public'));
 app.use(require('./routes'));
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/social-network', {
-  useFindAndModify: false,
+  // Find and modify may be necessary?
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
 
-// log mongo queries 
+// log mongo queries below
 mongoose.set('debug', true);
 
 app.listen(PORT, () => console.log(`🌍 Connected on localhost:${PORT}`));

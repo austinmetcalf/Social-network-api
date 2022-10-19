@@ -1,19 +1,19 @@
 const router = require('express').Router();
 const {
-  getUser,
-  getSingleUser,
+  getUserById,
+  getAllUsers,
   createUser,
   updateUser,
   deleteUser,
 } = require('../../controllers/userController.js');
 
 // /api/courses
-router.route('/').get(getUser).post(createUser);
+router.route('/').get(getAllUsers).post(createUser);
 
 // /api/courses/:courseId
 router
-  .route('/:userId')
-  .get(getSingleUser)
+  .route('/:id')
+  .get(getUserById)
   .put(updateUser)
   .delete(deleteUser);
 

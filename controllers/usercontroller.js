@@ -19,6 +19,7 @@ const userController = {
       },
     
     //user with thoughts
+    //params. needs to match spelling in API folder
     getUserById({ params }, res) {
         User.findOne({ _id: params.id })
            .populate({

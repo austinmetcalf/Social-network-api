@@ -1,20 +1,20 @@
-const router = require('express').router();
-
+const router = require('express').Router();
+// check spelling matches where it is importing from!
 const {
     getAllThoughts,
-    getThoughtByID,
+    getThoughtById,
     createThought,
     addReaction,
     updateThought,
     deleteThought,
-    removeReaction
+    removeReaction,
 } = require('../../controllers/thoughtcontroller')
 
 router
 
-    .route('/').get(getThoughts).post(createThoughts);
+    .route('/').get(getAllThoughts).post(createThought);
 
 router
-    .route('/:thoughtId').get(getThoughtById).put(updateThought).delete(deleteThought);
+    .route('/:id').get(getThoughtById).put(updateThought).delete(deleteThought);
 
     module.exports = router;
